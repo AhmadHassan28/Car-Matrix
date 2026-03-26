@@ -12,13 +12,13 @@ app.use(express.json());
 app.get('/', (req, res) => res.json({ message: 'CarMatrix API running' }));
 
 // 3. ROUTES LAST
-app.use('/api/auth',     require('./routes/auth'));
-app.use('/api/drivers',  require('./routes/drivers'));
-app.use('/api/services', require('./routes/services'));
-app.use('/api/cars',     require('./routes/cars'));
-app.use('/api/bookings', require('./routes/bookings'));
-app.use('/api/payments', require('./routes/payments'));
-app.use('/api/admin',    require('./routes/admin'));
+app.route('/api/auth',     require('./routes/auth'));
+app.route('/api/drivers',  require('./routes/drivers'));
+app.route('/api/services', require('./routes/services'));
+app.route('/api/cars',     require('./routes/cars'));
+app.route('/api/bookings', require('./routes/bookings'));
+app.route('/api/payments', require('./routes/payments'));
+app.route('/api/admin',    require('./routes/admin'));
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
